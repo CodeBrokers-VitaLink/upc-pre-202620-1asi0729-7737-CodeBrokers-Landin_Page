@@ -60,8 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['HIPAA & GDPR', 'Nuestra infraestructura cumple estrictamente con las normativas internacionales mas exigentes en proteccion de datos de salud.'],
                 ['Control de Acceso (RBAC)', 'Gestion granular de roles para clinicas, medicos de cabecera y familiares, garantizando acceso autorizado por niveles.']
             ],
-            ctaPro: ['Dale a tus pacientes continuidad clinica <span>sin friccion.</span>', 'Implementacion guiada para monitoreo preventivo, alertas oportunas y coordinacion clinica desde una sola plataforma.', '<span class="material-symbols-outlined">stethoscope</span> Unirme como proveedor de salud'],
-            ctaFamily: ['Dale a tus padres la tranquilidad y el cuidado <span>que merecen.</span>', 'Instalacion guiada en menos de 5 minutos, sin alterar su independencia ni rutinas diarias, y sin necesidad de conocimientos tecnologicos complejos.', '<span class="material-symbols-outlined">favorite</span> Comenzar a cuidar a mis padres'],
+            ctaPro: [
+                'Dale a tus pacientes continuidad clínica <span class="highlight-text">sin fricción.</span>',
+                'Implementación guiada de monitoreo preventivo continuo, alertas oportunas en tiempo real y coordinación médica centralizada desde una sola plataforma.',
+                '<span class="material-symbols-outlined">stethoscope</span> Unirme como proveedor de salud <span class="material-symbols-outlined">arrow_forward</span>',
+                'Solicitar información técnica',
+                'Salud Digital Preventiva',
+                [
+                    'Onboarding clínico ágil en 24h',
+                    'Cero falsos positivos con validación cruzada',
+                    'Cumplimiento normativo HIPAA & GDPR'
+                ]
+            ],
+            ctaFamily: [
+                'Dale a tus padres la tranquilidad y el cuidado <span class="highlight-text">que merecen.</span>',
+                'Instalación guiada en menos de 5 minutos, sin alterar su independencia ni rutinas diarias, y sin necesidad de conocimientos tecnológicos complejos.',
+                '<span class="material-symbols-outlined">favorite</span> Comenzar a cuidar a mis padres <span class="material-symbols-outlined">arrow_forward</span>',
+                'Conocer cómo funciona',
+                'Tranquilidad Familiar Continua',
+                [
+                    'Instalación fácil en 5 minutos',
+                    'Monitoreo pasivo no invasivo',
+                    'Tranquilidad compartida para toda la familia'
+                ]
+            ],
             footer: ['Cuidando conexiones, transformando la salud mediante tecnologia de prevencion continua.', 'Navegacion', 'Legal & Privacidad', 'Contacto', 'Ventajas Clinicas', 'Alertas Inteligentes', 'Planes', 'Seguridad', 'Privacidad', 'Terminos de Servicio', 'Aviso Legal', 'Cumplimiento HIPAA', '© 2026 VitaLink. Todos los derechos reservados. Desarrollado con los mas altos estandares de salud digital.']
         },
         en: {
@@ -119,8 +141,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 ['HIPAA & GDPR', 'Our infrastructure strictly follows the most demanding international health data protection standards.'],
                 ['Access Control (RBAC)', 'Granular role management for clinics, primary doctors, and families, ensuring authorized access by level.']
             ],
-            ctaPro: ['Give your patients clinical continuity <span>without friction.</span>', 'Guided implementation for preventive monitoring, timely alerts, and clinical coordination from one platform.', '<span class="material-symbols-outlined">stethoscope</span> Join as healthcare provider'],
-            ctaFamily: ['Give your parents the peace of mind and care <span>they deserve.</span>', 'Guided setup in less than 5 minutes, without disrupting their independence or daily routines, and without complex technology skills.', '<span class="material-symbols-outlined">favorite</span> Start caring for my parents'],
+            ctaPro: [
+                'Give your patients clinical continuity <span class="highlight-text">without friction.</span>',
+                'Guided implementation for preventive monitoring, timely real-time alerts, and centralized clinical coordination from a single comprehensive platform.',
+                '<span class="material-symbols-outlined">stethoscope</span> Join as healthcare provider <span class="material-symbols-outlined">arrow_forward</span>',
+                'Request technical info',
+                'Preventive Digital Health',
+                [
+                    'Fast clinical onboarding in 24h',
+                    'Zero false positives with cross-validation',
+                    'HIPAA & GDPR regulatory compliance'
+                ]
+            ],
+            ctaFamily: [
+                'Give your parents the peace of mind and care <span class="highlight-text">they deserve.</span>',
+                'Guided setup in under 5 minutes, without disrupting their independence or daily routines, and requiring no complex tech skills.',
+                '<span class="material-symbols-outlined">favorite</span> Start caring for my parents <span class="material-symbols-outlined">arrow_forward</span>',
+                'See how it works',
+                'Continuous Family Peace of Mind',
+                [
+                    'Easy 5-minute setup',
+                    'Non-invasive passive monitoring',
+                    'Shared peace of mind for the whole family'
+                ]
+            ],
             footer: ['Caring for connections, transforming health through continuous prevention technology.', 'Navigation', 'Legal & Privacy', 'Contact', 'Clinical Benefits', 'Intelligent Alerts', 'Plans', 'Security', 'Privacy', 'Terms of Service', 'Legal Notice', 'HIPAA Compliance', '© 2026 VitaLink. All rights reserved. Built with the highest digital health standards.']
         }
     };
@@ -155,8 +199,169 @@ document.addEventListener('DOMContentLoaded', () => {
             if (paragraph) paragraph.textContent = data[1];
         });
     }
-});
+//PASO 2
+    function setPricingCards(selector, values, ribbon) {
+        const grid = document.querySelector(selector);
+        if (!grid) return;
+        grid.querySelectorAll('.price-card').forEach((card, index) => {
+            const data = values[index];
+            if (!data) return;
+            const [badge, title, desc, price, features, action] = data;
+            card.querySelector('.card-badge').textContent = badge;
+            card.querySelector('h3').textContent = title;
+            card.querySelector('.card-desc').textContent = desc;
+            card.querySelector('.price-tag').innerHTML = price;
+            card.querySelectorAll('.price-features li').forEach((item, itemIndex) => {
+                if (features[itemIndex]) {
+                    item.innerHTML = `<span class="material-symbols-outlined">check</span> ${features[itemIndex]}`;
+                }
+            });
+            card.querySelector('.btn').textContent = action;
+        });
+        const ribbonEl = grid.querySelector('.popular-ribbon');
+        if (ribbonEl) ribbonEl.textContent = ribbon;
+    }
 
+    function applyLanguage() {
+        const text = i18n[currentLanguage];
+        const isFamily = body.dataset.audience === 'pacientes';
+        document.documentElement.lang = currentLanguage;
+
+        setAllText('.nav-links .nav-item', text.nav);
+        setAudienceButton(document.querySelector('[data-audience-option="profesionales"]'), 'stethoscope', text.audience[0]);
+        setAudienceButton(document.querySelector('[data-audience-option="pacientes"]'), 'family_home', text.audience[1]);
+        setText('#header-cta-btn', text.headerCta[isFamily ? 1 : 0]);
+
+        setHTML('.view-profesionales h1', text.heroPro[0]);
+        setText('.view-profesionales p', text.heroPro[1]);
+        setHTML('.view-profesionales .btn-primary', text.heroPro[2]);
+        setText('.view-profesionales .btn-outline', text.heroPro[3]);
+        setHTML('.view-pacientes h1', text.heroFamily[0]);
+        setText('.view-pacientes p', text.heroFamily[1]);
+        setHTML('.view-pacientes .btn-primary', text.heroFamily[2]);
+        setText('.view-pacientes .btn-outline', text.heroFamily[3]);
+        document.querySelector('.view-pacientes .btn-outline')?.setAttribute('href', '#como-funciona-familia');
+        setAllText('.metric-label', text.metrics);
+
+        setText('#como-funciona-familia .section-header h2', text.familyFlow[0]);
+        setText('#como-funciona-familia .section-header p', text.familyFlow[1]);
+        setTwoLineCards('.family-step-card', text.familySteps);
+        setHTML('.family-monitor-copy h2', text.familyMonitor[0]);
+        setText('.family-monitor-copy > p', text.familyMonitor[1]);
+        setTwoLineCards('.family-feature-list li', text.familyMonitorFeatures);
+
+        setText('#ventajas-clinicas .section-header h2', text.clinical[0]);
+        setText('#ventajas-clinicas .section-header p', text.clinical[1]);
+        document.querySelectorAll('.step-card').forEach((card, index) => {
+            const data = text.clinicalCards[index];
+            if (!data) return;
+            card.querySelector('.step-number').textContent = data[0];
+            card.querySelector('h3').textContent = data[1];
+            card.querySelector('p').textContent = data[2];
+        });
+
+        setText('#alertas .alert-info h2', text.alerts[0]);
+        setText('#alertas .section-subtitle', text.alerts[1]);
+        setTwoLineCards('#alertas .features-list li', text.alertFeatures);
+
+        const pricing = isFamily ? text.pricingFamily : text.pricingPro;
+        setText('#pricing-title', pricing[0]);
+        setText('#pricing-subtitle', pricing[1]);
+        setPricingCards('.pricing-grid.view-profesionales', text.proPlans, text.pricingPro[2]);
+        setPricingCards('.pricing-grid.view-pacientes', text.familyPlans, text.pricingFamily[2]);
+
+        setText('#testimonios-familia .section-header h2', text.testimonials[0]);
+        setText('#testimonios-familia .section-header p', text.testimonials[1]);
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            const data = text.testimonialCards[index];
+            if (!data) return;
+            card.querySelector('p').textContent = data[0];
+            card.querySelector('strong').textContent = data[1];
+            card.querySelector('small').textContent = data[2];
+        });
+//Paso 3
+        setText('#seguridad-datos .section-header h2', text.security[0]);
+        setText('#seguridad-datos .section-header p', text.security[1]);
+        setTwoLineCards('.security-card', text.securityCards);
+
+        const cta = isFamily ? text.ctaFamily : text.ctaPro;
+        setHTML('#cta-title', cta[0]);
+        setText('#cta-desc', cta[1]);
+        setHTML('#cta-action-btn', cta[2]);
+        setText('#cta-secondary-btn', cta[3]);
+        const topBadge = document.querySelector('.cta-top-badge span:last-child');
+        if (topBadge && cta[4]) topBadge.textContent = cta[4];
+
+        const perksContainer = document.getElementById('cta-perks');
+        if (perksContainer && cta[5]) {
+            perksContainer.innerHTML = cta[5].map(item => `
+                <span class="cta-perk-item">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    ${item}
+                </span>
+            `).join('');
+        }
+
+        setText('.footer-brand p', text.footer[0]);
+        setAllText('.footer-links-col h4', text.footer.slice(1, 4));
+        setAllText('.footer-links a', text.footer.slice(4, 12));
+        setText('.footer-bottom p', text.footer[12]);
+
+        languageButtons.forEach((button) => {
+            const active = button.dataset.languageOption === currentLanguage;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+    }
+
+    function switchAudienceView(audience) {
+        body.setAttribute('data-audience', audience);
+        document.querySelectorAll('.view-content, .pricing-grid, .preview-card-wrapper').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(`.view-${audience}`).forEach(el => el.classList.add('active'));
+        segmentButtons.forEach((button) => {
+            const active = button.dataset.audienceOption === audience;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+        applyLanguage();
+    }
+
+    segmentButtons.forEach(button => {
+        button.addEventListener('click', () => switchAudienceView(button.dataset.audienceOption));
+    });
+
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentLanguage = button.dataset.languageOption;
+            applyLanguage();
+        });
+    });
+
+    const navbar = document.querySelector('.navbar-fixed');
+    window.addEventListener('scroll', () => {
+        navbar.style.boxShadow = window.scrollY > 20 ? '0 10px 30px rgba(0, 50, 40, 0.08)' : 'none';
+        navbar.style.padding = window.scrollY > 20 ? '4px 0' : '0';
+    });
+
+    const activeButton = document.querySelector('[data-audience-option].active');
+    switchAudienceView(activeButton ? activeButton.dataset.audienceOption : 'profesionales');
+
+    // --- Mobile Navigation Toggle ---
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navbarContainer = document.querySelector('.navbar-container');
+
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = navbarContainer.classList.toggle('nav-open');
+            mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+            const icon = mobileMenuToggle.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.textContent = isOpen ? 'close' : 'menu';
+            }
+        });
+//Paso 4
 
         document.querySelectorAll('.nav-item, #header-cta-btn').forEach(link => {
             link.addEventListener('click', () => {
