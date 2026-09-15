@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>VitaLink | Monitoreo Preventivo para Profesionales de la Salud</title>
+    <meta name="description"
+        content="VitaLink facilita el monitoreo preventivo de pacientes mediante datos continuos, alertas inteligentes y herramientas integradas para profesionales de la salud y familias.">
+    <meta name="keywords"
+        content="VitaLink, monitoreo preventivo, monitoreo de pacientes, seguimiento de pacientes, alertas de salud, profesionales de la salud, tecnología médica">
+    <meta name="author" content="CodeBrokers">
+
+    <meta property="og:title" content="VitaLink | Monitoreo Preventivo para Profesionales de la Salud">
+    <meta property="og:description"
+        content="Monitoreo preventivo, alertas inteligentes y datos continuos para facilitar el seguimiento de pacientes.">
+    <meta property="og:image" content="https://italink.com/assets/images/og-cover.png">
+    <meta property="og:url" content="https://vitalink.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-audience="profesionales"> 
+    <header class="navbar-fixed">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="#hero" class="brand-logo">
+                    <img src="assets/logo-vitalink.png" alt="VitaLink Logo" class="brand-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links" id="nav-menu">
+                <a href="#ventajas-clinicas" class="nav-item">Ventajas Clínicas</a>
+                <a href="#alertas" class="nav-item">Alertas</a>
+                <a href="#planes" class="nav-item">Planes</a>
+                <a href="#seguridad-datos" class="nav-item">Seguridad</a>
+            </nav>
+
+            <div class="audience-selector" role="group" aria-label="Cambiar segmento de usuario">
+                <button class="segment-btn active" type="button" data-audience-option="profesionales"
+                    aria-pressed="true">
+                    <span class="material-symbols-outlined">stethoscope</span>
+                    Médicos
+                </button>
+                <button class="segment-btn" type="button" data-audience-option="pacientes" aria-pressed="false">
+                    <span class="material-symbols-outlined">family_home</span>
+                    Familiares
+                </button>
+            </div>
+
+            <div class="language-switcher" role="group" aria-label="Cambiar idioma">
+                <span class="material-symbols-outlined lang-icon">language</span>
+                <button class="language-btn active" type="button" data-language-option="es" aria-pressed="true">ES</button>
+                <button class="language-btn" type="button" data-language-option="en" aria-pressed="false">EN</button>
+            </div>
+
+            <div class="cta-container">
+                <a href="#unirse" class="btn btn-primary btn-sm" id="header-cta-btn">Unirme como proveedor</a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+    
+        <section id="hero" class="hero-section">
+            <div class="hero-container max-width-container">
+                <div class="hero-content">
+                    <!-- VISTA PROFESIONAL (Default) -->
+                    <div class="view-content view-profesionales active">
+                        <h1>Optimice el seguimiento preventivo con <span class="highlight-text">monitoreo de precisión
+                                24/7.</span></h1>
+                        <p>Reduzca reingresos hospitalarios y mejore el control de pacientes crónicos con alertas en
+                            tiempo real e integración con su flujo clínico. Tome decisiones con datos de alta frecuencia
+                            en una sola plataforma.</p>
+                        <div class="hero-actions">
+                            <a href="#unirse" class="btn btn-primary btn-lg">Unirme como proveedor <span
+                                    class="material-symbols-outlined">arrow_forward</span></a>
+                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Solicitar información
+                                técnica</a>
+                        </div>
+                    </div>
+
+
+                    <div class="view-content view-pacientes">
+                        <h1>La tranquilidad de saber que tus padres están bien, <span class="highlight-text">sin
+                                interrumpir su día.</span></h1>
+                        <p>Monitoreo automático de signos vitales que avisa a la familia y a la clínica si algo no está
+                            normal. Todos ven el mismo estado actualizado, sin depender de llamadas constantes ni de que
+                            alguien recuerde avisar.</p>
+                        <div class="hero-actions">
+                            <a href="#unirse" class="btn btn-primary btn-lg">Comenzar ahora <span
+                                    class="material-symbols-outlined">arrow_forward</span></a>
+                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Conocer cómo funciona</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <strong class="metric-number">+99.8%</strong>
+                            <span class="metric-label">Precisión de Alertas</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <strong class="metric-number">24/7</strong>
+                            <span class="metric-label">Telemetría Continua</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <strong class="metric-number">+10k</strong>
+                            <span class="metric-label">Pacientes Monitoreados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder">
+                        <img src="assets/FotoHero.jpeg" alt="VitaLink Hero Preview" class="hero-custom-img"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-box" style="display:none;">
+                            <span class="material-symbols-outlined">image</span>
+                            <p>Espacio reservado para tu imagen del Hero (lado derecho)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--PARTE 2-->
+
+        <section id="como-funciona-familia" class="family-only family-flow-section">
+            <div class="max-width-container">
+                <div class="section-header text-center">
+                    <h2>Un ecosistema conectado, sin esfuerzo</h2>
+                    <p>Cuatro pilares que mantienen comunicados al paciente, la familia y los profesionales de salud sin llamadas constantes ni incertidumbre.</p>
+                </div>
+
+                <div class="family-steps-grid">
+                    <article class="family-step-card">
+                        <div class="family-step-icon"><span class="material-symbols-outlined">watch</span></div>
+                        <h3>Sensor Activo</h3>
+                        <p>El adulto mayor usa un sensor discreto o una aplicación simple en su dispositivo habitual.</p>
+                    </article>
+
+                    <article class="family-step-card raised">
+                        <div class="family-step-icon secondary"><span class="material-symbols-outlined">analytics</span></div>
+                        <h3>Tiempo Real</h3>
+                        <p>Los datos se recopilan y analizan 24/7 de forma automática, identificando cambios importantes.</p>
+                    </article>
+
+                    <article class="family-step-card">
+                        <div class="family-step-icon warning"><span class="material-symbols-outlined">notification_important</span></div>
+                        <h3>Alerta Inmediata</h3>
+                        <p>Si hay una anomalía, se avisa a la clínica y a la familia al instante de manera coordinada.</p>
+                    </article>
+
+                    <article class="family-step-card raised">
+                        <div class="family-step-icon tertiary"><span class="material-symbols-outlined">family_home</span></div>
+                        <h3>Estado Compartido</h3>
+                        <p>Todos ven el mismo estado actualizado, reduciendo ansiedad y duplicación de esfuerzos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="monitoreo-familiar" class="family-only family-monitor-section">
+            <div class="max-width-container grid-2-col items-center">
+                <div class="family-monitor-copy">
+                    <h2>Monitoreo profesional <span>en tu bolsillo.</span></h2>
+                    <p>Visualiza el estado de salud de tus seres queridos con claridad profesional. Una interfaz pensada para mostrar solo lo importante de un vistazo.</p>
+
+                    <ul class="features-list family-feature-list">
+                        <li>
+                            <div class="feature-icon"><span class="material-symbols-outlined">check</span></div>
+                            <div>
+                                <h3>Métricas clave simplificadas</h3>
+                                <p>Ritmo cardíaco, oxígeno y actividad diaria presentados en formatos fáciles de entender.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"><span class="material-symbols-outlined">trending_up</span></div>
+                            <div>
+                                <h3>Historial y tendencias</h3>
+                                <p>Observa la evolución en el tiempo y comparte datos precisos durante las consultas médicas.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="family-monitor-panel">
+
+                    <div  class="family-image-placeholder" aria-label="Espacio reservado para imagen de monitoreo familiar">
+                        <img src="assets/screen.png" >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="ventajas-clinicas" class="clinical-flow max-width-container">
+            <div class="section-header text-center">
+                <h2>Flujo clínico integrado</h2>
+                <p>Un entorno diseñado para minimizar la carga cognitiva del profesional médico, entregando información
+                    precisa exactamente cuando se requiere.</p>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <div class="step-number">Fase 1</div>
+                    <div class="step-icon">
+                        <span class="material-symbols-outlined">sensors</span>
+                    </div>
+                    <h3>Captura Continua</h3>
+                    <p>Recopilación constante de variables biométricas cruciales (FC, SpO2, PA y Temp) de forma pasiva,
+                        continua y sin fricción para el paciente.</p>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number">Fase 2</div>
+                    <div class="step-icon">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <h3>Análisis Algorítmico</h3>
+                    <p>Procesamiento automatizado mediante modelos predictivos para detectar anomalías tempranas y
+                        patrones subclínicos de descompensación.</p>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number">Fase 3</div>
+                    <div class="step-icon">
+                        <span class="material-symbols-outlined">notifications_active</span>
+                    </div>
+                    <h3>Alertas Integradas</h3>
+                    <p>Notificación inmediata en el panel médico y a la red de cuidado con prioridad escalonada,
+                        evitando la fatiga por alarmas innecesarias.</p>
+                </article>
+            </div>
+        </section>
+
+        <!--Paso 3-->
+
+        <section id="alertas" class="alert-protocol-section">
+            <div class="max-width-container grid-2-col items-center">
+                <div class="alert-graphics">
+                    <div class="alert-image-placeholder">
+                        <img src="assets/screen.png" alt="Protocolo Alerta VitaLink" class="alert-custom-img"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-box" style="display:none;">
+                            <span class="material-symbols-outlined">image</span>
+                            <p>Espacio reservado para tu imagen de Alerta Inteligente (lado izquierdo)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-info">
+                    <h2>Protocolo de Alerta Inteligente</h2>
+                    <p class="section-subtitle">El sistema analiza tendencias multivariable en lugar de aisladas,
+                        garantizando una respuesta oportuna sin saturar al equipo médico.</p>
+
+                    <ul class="features-list">
+                        <li>
+                            <div class="feature-icon">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <div>
+                                <h3>Cero Falsos Positivos</h3>
+                                <p>Algoritmos de validación cruzada y filtrado de artefactos de movimiento antes de
+                                    activar alertas.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <span class="material-symbols-outlined">call_split</span>
+                            </div>
+                            <div>
+                                <h3>Escalamiento Multicanal</h3>
+                                <p>Notificaciones pushed a App, SMS, correo o llamadas de emergencia según el nivel de
+                                    severidad determinado.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <span class="material-symbols-outlined">history</span>
+                            </div>
+                            <div>
+                                <h3>Contexto Histórico</h3>
+                                <p>Cada alerta incluye una ventana previa de 72 horas para evaluar la trayectoria del
+                                    paciente en segundos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" class="pricing-section">
+            <div class="max-width-container">
+                <div class="section-header text-center">
+                    <h2 id="pricing-title">Planes diseñados para la escala de su institución médica</h2>
+                    <p id="pricing-subtitle">Supervisión preventiva, reducción de reingresos y gestión multi-paciente
+                        con flexibilidad y precisión.</p>
+                </div>
+
+                <div class="pricing-grid view-profesionales active">
+                    <div class="price-card">
+                        <div class="card-badge">Clínica Básica</div>
+                        <h3>Clínica Básica</h3>
+                        <p class="card-desc">Ideal para consultas privadas y primeros consultorios.</p>
+                        <div class="price-tag">$99 <span>/ mes</span></div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Hasta 25 pacientes activos</li>
+                            <li><span class="material-symbols-outlined">check</span> Alertas tempranas en tiempo real
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Acceso al dashboard clínico web
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Historial de 30 días de tendencias
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Soporte técnico estándar</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-outline w-100">Comenzar con Clínica Básica</a>
+                    </div>
+
+                    <div class="price-card featured">
+                        <div class="popular-ribbon">Más Recomendado</div>
+                        <div class="card-badge">Clínica Pro</div>
+                        <h3>Clínica Pro</h3>
+                        <p class="card-desc">Para centros médicos con múltiples especialistas.</p>
+                        <div class="price-tag">$299 <span>/ mes</span></div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Hasta 100 pacientes activos</li>
+                            <li><span class="material-symbols-outlined">check</span> Trazabilidad de alertas con
+                                múltiples cuidadores</li>
+                            <li><span class="material-symbols-outlined">check</span> Algoritmo de triaje predictivo</li>
+                            <li><span class="material-symbols-outlined">check</span> Integración HL7 / FHIR básica</li>
+                            <li><span class="material-symbols-outlined">check</span> Exportación de reportes clínicos en
+                                PDF</li>
+                            <li><span class="material-symbols-outlined">check</span> Soporte 24/7 prioritario</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-primary w-100">Lograr la escala</a>
+                    </div>
+<!--Paso 4-->
+                    <div class="price-card">
+                        <div class="card-badge">Institucional</div>
+                        <h3>Institucional</h3>
+                        <p class="card-desc">Para redes hospitalarias y proveedores a gran escala.</p>
+                        <div class="price-tag">Personalizado</div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Pacientes e infraestructura
+                                ilimitados</li>
+                            <li><span class="material-symbols-outlined">check</span> Servidores dedicados y cumplimiento
+                                regulatorio</li>
+                            <li><span class="material-symbols-outlined">check</span> Gestión de permisos y roles
+                                avanzados (RBAC)</li>
+                            <li><span class="material-symbols-outlined">check</span> EMR / HIS Integración directa a
+                                medida</li>
+                            <li><span class="material-symbols-outlined">check</span> Gestor de cuenta dedicado y SLA de
+                                99.99%</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-outline w-100">Contactar a consultor técnico</a>
+                    </div>
+                </div>
+
+                <div class="pricing-grid view-pacientes">
+                    <div class="price-card">
+                        <div class="card-badge">Plan Básico</div>
+                        <h3>Plan Básico</h3>
+                        <p class="card-desc">Ideal para probar el servicio con 1 familiar conectado.</p>
+                        <div class="price-tag">Gratis <span>/ para siempre</span></div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Vista simple: todo bien o necesita
+                                atención</li>
+                            <li><span class="material-symbols-outlined">check</span> Alertas automáticas cuando un dato
+                                esté fuera de rango</li>
+                            <li><span class="material-symbols-outlined">check</span> Botón “ya atendí a mi familiar”
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Historial de los últimos 7 días
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> 1 familiar conectado</li>
+                            <li><span class="material-symbols-outlined">check</span> Modo de captura simple con botones
+                                grandes</li>
+                            <li><span class="material-symbols-outlined">check</span> Botón de emergencia SOS básico</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-outline w-100">Comenzar Gratis</a>
+                    </div>
+
+                    <div class="price-card featured">
+                        <div class="popular-ribbon">Más Elegido</div>
+                        <div class="card-badge">Plan Familiar</div>
+                        <h3>Plan Familiar</h3>
+                        <p class="card-desc">Coordinación integral y tranquilidad compartida.</p>
+                        <div class="price-tag">$9.99 <span>/ mes</span></div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Hasta 3 familiares conectados con
+                                roles diferenciados</li>
+                            <li><span class="material-symbols-outlined">check</span> Alerta detallada: qué pasó,
+                                gravedad y estado de atención</li>
+                            <li><span class="material-symbols-outlined">check</span> Ver quién ya revisó o atendió la
+                                alerta</li>
+                            <li><span class="material-symbols-outlined">check</span> Métrica exacta que originó la
+                                alerta</li>
+                            <li><span class="material-symbols-outlined">check</span> Historial ampliado a 30 días</li>
+                            <li><span class="material-symbols-outlined">check</span> Modo asistido para cuidadores</li>
+                            <li><span class="material-symbols-outlined">check</span> Contactos autorizados y
+                                notificaciones por rol</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-primary w-100">Elegir Plan Familiar</a>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="card-badge">Plan Plus</div>
+                        <h3>Familiar Plus</h3>
+                        <p class="card-desc">Para cuidado de alta complejidad y supervisión médica.</p>
+                        <div class="price-tag">$19.99 <span>/ mes</span></div>
+                        <ul class="price-features">
+                            <li><span class="material-symbols-outlined">check</span> Hasta 6 familiares conectados</li>
+                            <li><span class="material-symbols-outlined">check</span> Historial ilimitado y reportes PDF
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Niveles de acceso y privacidad por
+                                familiar</li>
+                            <li><span class="material-symbols-outlined">check</span> Vinculación directa con médico o
+                                clínica VitaLink</li>
+                            <li><span class="material-symbols-outlined">check</span> Línea directa con enfermería 24/7
+                            </li>
+                            <li><span class="material-symbols-outlined">check</span> Trazabilidad completa de cada
+                                alerta</li>
+                            <li><span class="material-symbols-outlined">check</span> Soporte técnico prioritario</li>
+                        </ul>
+                        <a href="#unirse" class="btn btn-outline w-100">Elegir Plan Plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonios-familia" class="family-only testimonials-section">
+            <div class="max-width-container">
+                <div class="section-header text-center">
+                    <h2>La tranquilidad de miles de familias</h2>
+                    <p>Historias de quienes ya confían el cuidado de sus padres a VitaLink.</p>
+                </div>
+<!--Parte5-->
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <p>"Ahora puedo trabajar tranquila sabiendo que si algo pasa, recibiré una alerta inmediata. Es un cambio de vida."</p>
+                        <div class="testimonial-author">
+                            <span class="material-symbols-outlined">person</span>
+                            <div><strong>Elena R.</strong><small>Hija de usuario</small></div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <p>"Lo que más valoro es que mi padre no siente que lo estamos vigilando. Sigue con su rutina normal."</p>
+                        <div class="testimonial-author">
+                            <span class="material-symbols-outlined">person</span>
+                            <div><strong>Carlos M.</strong><small>Hijo de usuario</small></div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <p>"La precisión de los datos y la rapidez de las alertas ayudan a actuar antes de que el problema avance."</p>
+                        <div class="testimonial-author">
+                            <span class="material-symbols-outlined">medical_services</span>
+                            <div><strong>Dra. Sofía G.</strong><small>Geriatra</small></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="seguridad-datos" class="security-section">
+            <div class="max-width-container">
+                <div class="section-header text-center">
+                    <span class="material-symbols-outlined security-badge-icon">verified_user</span>
+                    <h2>Seguridad de grado médico. Cumplimiento normativo total.</h2>
+                    <p>La privacidad del paciente y la integridad de los datos de salud son nuestra prioridad absoluta.
+                    </p>
+                </div>
+
+                <div class="security-badges-grid">
+                    <div class="security-card">
+                        <div class="sec-icon"><span class="material-symbols-outlined">lock</span></div>
+                        <h3>Cifrado E2E</h3>
+                        <p>Todos los datos en tránsito y en reposo se cifran con estándar AES-256 bits y TLS 1.3 de
+                            extremo a extremo.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="sec-icon"><span class="material-symbols-outlined">health_and_safety</span></div>
+                        <h3>HIPAA & GDPR</h3>
+                        <p>Nuestra infraestructura cumple estrictamente con las normativas internacionales más exigentes
+                            en protección de datos de salud.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="sec-icon"><span class="material-symbols-outlined">admin_panel_settings</span></div>
+                        <h3>Control de Acceso (RBAC)</h3>
+                        <p>Gestión granular de roles para clínicas, médicos de cabecera y familiares, garantizando
+                            acceso autorizado por niveles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="unirse" class="cta-section">
+            <div class="max-width-container">
+                <div class="cta-box cta-family-box">
+
+                    <h2 id="cta-title">Dale a tus pacientes continuidad clínica <span class="highlight-text">sin fricción.</span></h2>
+                    <p id="cta-desc">Implementación guiada de monitoreo preventivo continuo, alertas oportunas en tiempo real y coordinación médica centralizada desde una sola plataforma.</p>
+                    
+                    <div class="cta-actions-group">
+                        <a href="#planes" class="btn btn-primary btn-lg" id="cta-action-btn">
+                            <span class="material-symbols-outlined">stethoscope</span>
+                            Unirme como proveedor de salud
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="#ventajas-clinicas" class="btn btn-outline btn-lg" id="cta-secondary-btn">
+                            Solicitar información técnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--parte6-->
+        <!-- SECCIÓN EQUIPO DE DESARROLLO -->
+        <section id="equipo-desarrollo" class="team-section">
+            <div class="max-width-container">
+                <div class="section-header text-center">
+                    <h2>Equipo de desarrollo</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar-placeholder">
+                            <img src="assets/f1.jpeg" alt="Foto Yazid">
+                        </div>
+                        <h3 class="team-name">Yazid Said Conde</h3>
+                        <p class="team-code">U202312348</p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-placeholder" title="Colocar foto del integrante aquí">
+                            <img src="assets/f2.jpeg" alt="Foto Pablo">
+                        </div>
+                        <h3 class="team-name">Pablo Martinez</h3>
+                        <p class="team-code">U202120011</p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-placeholder" title="Colocar foto del integrante aquí">
+                            <img src="assets/f3.png" alt="Foto Yazid">
+                        </div>
+                        <h3 class="team-name">Kirk Quiliano</h3>
+                        <p class="team-code">U202411378 </p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-placeholder" title="Colocar foto del integrante aquí">
+                            <img src="assets/f4.jpeg" alt="Foto Yazid">
+                        </div>
+                        <h3 class="team-name">Fernando Contreras </h3>
+                        <p class="team-code">U202418623</p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-avatar-placeholder" title="Colocar foto del integrante aquí">
+                            <img src="assets/f5.jpeg" alt="Foto Yazid">
+                        </div>
+                        <h3 class="team-name">Deiby Vargas</h3>
+                        <p class="team-code">U20211F962</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="max-width-container footer-grid">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo footer-logo">
+                    <img src="assets/logo-vitalink.png" alt="VitaLink Logo" class="brand-logo-img">
+                </a>
+                <p>Cuidando conexiones, transformando la salud mediante tecnología de prevención continua.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Navegación</h4>
+                <div class="footer-links">
+                    <a href="#ventajas-clinicas">Ventajas Clínicas</a>
+                    <a href="#alertas">Alertas Inteligentes</a>
+                    <a href="#planes">Planes</a>
+                    <a href="#seguridad-datos">Seguridad</a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Legal & Privacidad</h4>
+                <div class="footer-links">
+                    <a href="#privacidad" id="privacidad">Privacidad</a>
+                    <a href="#terminos" id="terminos">Términos de Servicio</a>
+                    <a href="#legal" id="legal">Aviso Legal</a>
+                    <a href="#hipaa">Cumplimiento HIPAA</a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Contacto</h4>
+                <div class="footer-contact" id="contacto">
+                    <p><span class="material-symbols-outlined">mail</span> contacto@vitalink.com</p>
+                    <p><span class="material-symbols-outlined">phone</span> +34 900 000 000</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Compartir en redes"><span
+                                class="material-symbols-outlined">share</span></a>
+                        <a href="#" aria-label="Sitio Global"><span class="material-symbols-outlined">public</span></a>
+                        <a href="#" aria-label="Red de Partners"><span class="material-symbols-outlined">hub</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom max-width-container text-center">
+            <p>&copy; 2026 VitaLink. Todos los derechos reservados. Desarrollado con los más altos estándares de salud
+                digital.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
