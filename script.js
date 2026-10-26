@@ -228,6 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = currentLanguage;
 
         setAllText('.nav-links .nav-item', text.nav);
+        document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#ventajas-clinicas' || href === '#como-funciona-familia') link.setAttribute('href', isFamily ? '#como-funciona-familia' : '#ventajas-clinicas');
+            if (href === '#alertas' || href === '#monitoreo-familiar') link.setAttribute('href', isFamily ? '#monitoreo-familiar' : '#alertas');
+        });
         setAudienceButton(document.querySelector('[data-audience-option="profesionales"]'), 'stethoscope', text.audience[0]);
         setAudienceButton(document.querySelector('[data-audience-option="pacientes"]'), 'family_home', text.audience[1]);
         setText('#header-cta-btn', text.headerCta[isFamily ? 1 : 0]);
@@ -384,4 +389,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+// Keyboard navigation and expandable project notices.
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && document.querySelector('.nav-open')) {
+            document.getElementById('mobile-menu-toggle').click();
+            document.getElementById('mobile-menu-toggle').focus();
+        }
+    });
+    document.querySelectorAll('.project-notices details').forEach(detail => {
+        document.querySelectorAll(`a[href="#${detail.id}"]`).forEach(link => link.addEventListener('click', () => { detail.open = true; }));
+    });
 });

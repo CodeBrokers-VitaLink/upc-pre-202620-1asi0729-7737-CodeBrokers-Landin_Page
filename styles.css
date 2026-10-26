@@ -2216,3 +2216,49 @@ body[data-audience="pacientes"] .badge-view {
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
+/* Responsive completion: intrinsic sizing instead of clipping overflow. */
+body { overflow-x: visible; }
+main, section, .hero-content, .hero-visual, .grid-2-col > *, .footer-grid > *, .price-card { min-width: 0; }
+p, h1, h2, h3, h4, .btn, .team-name { overflow-wrap: anywhere; }
+section[id], details[id], #contacto { scroll-margin-top: 160px; }
+:focus-visible { outline: 3px solid var(--secondary); outline-offset: 4px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 3000; padding: 12px; background: white; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.btn, button, summary { min-height: 44px; }
+.btn { white-space: normal; text-align: center; }
+.family-image-placeholder img, .alert-custom-img, .hero-custom-img { max-width: 100%; height: auto; object-fit: contain; }
+.project-notices { padding-top: 24px; padding-bottom: 48px; }
+.project-notices details { padding: 16px; border-bottom: 1px solid var(--border-color); }
+.project-notices summary { cursor: pointer; font-weight: 600; }
+.project-notices p { margin-top: 12px; }
+.footer-contact .btn { margin: 12px 0; }
+@media (max-width: 1200px) and (min-width: 851px) {
+    .navbar-container { flex-wrap: wrap; gap: 12px; }
+    .nav-links { order: 5; width: 100%; justify-content: center; gap: 24px; }
+    .hero-section { padding-top: 180px; }
+}
+@media (max-width: 850px) {
+    .navbar-container { flex-wrap: wrap; }
+    .audience-selector { order: 5; }
+    .nav-links { max-height: 65vh; overflow-y: auto; }
+}
+@media (max-width: 640px) {
+    .navbar-container { gap: 8px; }
+    .mobile-menu-toggle { order: 2; margin-left: auto; }
+    .language-switcher { order: 3; }
+    .language-switcher .lang-icon { display: none; }
+    .language-btn { min-width: 36px; padding: 0 6px; }
+    .audience-selector { flex-basis: 100%; }
+    .hero-section { padding-top: 180px; }
+    .hero-metrics { flex-wrap: wrap; gap: 16px; }
+    .metric-divider { display: none; }
+    .hero-container, .grid-2-col { grid-template-columns: minmax(0, 1fr); }
+    .team-grid { gap: 20px; }
+    .team-card { flex: 0 1 calc(50% - 10px); min-width: 0; }
+    .team-avatar-placeholder { width: 100px; height: 100px; }
+    .team-section .section-header h2 { font-size: 1.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
