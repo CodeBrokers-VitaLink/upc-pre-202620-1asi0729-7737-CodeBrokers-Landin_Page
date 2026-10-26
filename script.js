@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (paragraph) paragraph.textContent = data[1];
         });
     }
-//PASO 2
+
     function setPricingCards(selector, values, ribbon) {
         const grid = document.querySelector(selector);
         if (!grid) return;
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelector('strong').textContent = data[1];
             card.querySelector('small').textContent = data[2];
         });
-//Paso 3
+
         setText('#seguridad-datos .section-header h2', text.security[0]);
         setText('#seguridad-datos .section-header p', text.security[1]);
         setTwoLineCards('.security-card', text.securityCards);
@@ -353,7 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeButton = document.querySelector('[data-audience-option].active');
     switchAudienceView(activeButton ? activeButton.dataset.audienceOption : 'profesionales');
 
-    // --- Mobile Navigation Toggle ---
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navbarContainer = document.querySelector('.navbar-container');
@@ -368,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.textContent = isOpen ? 'close' : 'menu';
             }
         });
-//Paso 4
+
 
         document.querySelectorAll('.nav-item, #header-cta-btn').forEach(link => {
             link.addEventListener('click', () => {
@@ -393,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Keyboard navigation and expandable project notices.
 document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && document.querySelector('.nav-open')) {
