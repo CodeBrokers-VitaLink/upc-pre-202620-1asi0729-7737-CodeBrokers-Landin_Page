@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (paragraph) paragraph.textContent = data[1];
         });
     }
-//PASO 2
+
     function setPricingCards(selector, values, ribbon) {
         const grid = document.querySelector(selector);
         if (!grid) return;
@@ -228,6 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = currentLanguage;
 
         setAllText('.nav-links .nav-item', text.nav);
+        document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#ventajas-clinicas' || href === '#como-funciona-familia') link.setAttribute('href', isFamily ? '#como-funciona-familia' : '#ventajas-clinicas');
+            if (href === '#alertas' || href === '#monitoreo-familiar') link.setAttribute('href', isFamily ? '#monitoreo-familiar' : '#alertas');
+        });
         setAudienceButton(document.querySelector('[data-audience-option="profesionales"]'), 'stethoscope', text.audience[0]);
         setAudienceButton(document.querySelector('[data-audience-option="pacientes"]'), 'family_home', text.audience[1]);
         setText('#header-cta-btn', text.headerCta[isFamily ? 1 : 0]);
@@ -240,7 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setText('.view-pacientes p', text.heroFamily[1]);
         setHTML('.view-pacientes .btn-primary', text.heroFamily[2]);
         setText('.view-pacientes .btn-outline', text.heroFamily[3]);
-        document.querySelector('.view-pacientes .btn-outline')?.setAttribute('href', '#como-funciona-familia');
+        document.querySelectorAll('a.btn').forEach(link => {
+            link.setAttribute('href', 'https://vitalink-frontend.vercel.app/');
+        });
         setAllText('.metric-label', text.metrics);
 
         setText('#como-funciona-familia .section-header h2', text.familyFlow[0]);
@@ -279,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelector('strong').textContent = data[1];
             card.querySelector('small').textContent = data[2];
         });
-//Paso 3
+
         setText('#seguridad-datos .section-header h2', text.security[0]);
         setText('#seguridad-datos .section-header p', text.security[1]);
         setTwoLineCards('.security-card', text.securityCards);
@@ -346,7 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeButton = document.querySelector('[data-audience-option].active');
     switchAudienceView(activeButton ? activeButton.dataset.audienceOption : 'profesionales');
 
-    // --- Mobile Navigation Toggle ---
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navbarContainer = document.querySelector('.navbar-container');
@@ -361,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.textContent = isOpen ? 'close' : 'menu';
             }
         });
-//Paso 4
+
 
         document.querySelectorAll('.nav-item, #header-cta-btn').forEach(link => {
             link.addEventListener('click', () => {
@@ -384,4 +390,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && document.querySelector('.nav-open')) {
+            document.getElementById('mobile-menu-toggle').click();
+            document.getElementById('mobile-menu-toggle').focus();
+        }
+    });
+    document.querySelectorAll('.project-notices details').forEach(detail => {
+        document.querySelectorAll(`a[href="#${detail.id}"]`).forEach(link => link.addEventListener('click', () => { detail.open = true; }));
+    });
 });

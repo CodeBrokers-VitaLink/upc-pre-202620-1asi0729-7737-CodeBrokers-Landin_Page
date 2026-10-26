@@ -16,8 +16,7 @@
     <meta property="og:title" content="VitaLink | Monitoreo Preventivo para Profesionales de la Salud">
     <meta property="og:description"
         content="Monitoreo preventivo, alertas inteligentes y datos continuos para facilitar el seguimiento de pacientes.">
-    <meta property="og:image" content="https://italink.com/assets/images/og-cover.png">
-    <meta property="og:url" content="https://vitalink.com">
+    <meta property="og:image" content="assets/screen.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -31,7 +30,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body data-audience="profesionales"> 
+<body data-audience="profesionales">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="navbar-fixed">
         <div class="navbar-container">
             <div class="logo-container">
@@ -65,21 +65,21 @@
             </div>
 
             <div class="cta-container">
-                <a href="#unirse" class="btn btn-primary btn-sm" id="header-cta-btn">Unirme como proveedor</a>
+                <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary btn-sm" id="header-cta-btn">Unirme como proveedor</a>
             </div>
 
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu" type="button">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </header>
 
-    <main>
-    
+    <main id="contenido">
+
         <section id="hero" class="hero-section">
             <div class="hero-container max-width-container">
                 <div class="hero-content">
-                    <!-- VISTA PROFESIONAL (Default) -->
+
                     <div class="view-content view-profesionales active">
                         <h1>Optimice el seguimiento preventivo con <span class="highlight-text">monitoreo de precisión
                                 24/7.</span></h1>
@@ -87,9 +87,9 @@
                             tiempo real e integración con su flujo clínico. Tome decisiones con datos de alta frecuencia
                             en una sola plataforma.</p>
                         <div class="hero-actions">
-                            <a href="#unirse" class="btn btn-primary btn-lg">Unirme como proveedor <span
+                            <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary btn-lg">Unirme como proveedor <span
                                     class="material-symbols-outlined">arrow_forward</span></a>
-                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Solicitar información
+                            <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline btn-lg">Solicitar información
                                 técnica</a>
                         </div>
                     </div>
@@ -102,9 +102,9 @@
                             normal. Todos ven el mismo estado actualizado, sin depender de llamadas constantes ni de que
                             alguien recuerde avisar.</p>
                         <div class="hero-actions">
-                            <a href="#unirse" class="btn btn-primary btn-lg">Comenzar ahora <span
+                            <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary btn-lg">Comenzar ahora <span
                                     class="material-symbols-outlined">arrow_forward</span></a>
-                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Conocer cómo funciona</a>
+                            <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline btn-lg">Conocer cómo funciona</a>
                         </div>
                     </div>
 
@@ -139,7 +139,7 @@
             </div>
         </section>
 
-        <!--PARTE 2-->
+
 
         <section id="como-funciona-familia" class="family-only family-flow-section">
             <div class="max-width-container">
@@ -204,7 +204,7 @@
                 <div class="family-monitor-panel">
 
                     <div  class="family-image-placeholder" aria-label="Espacio reservado para imagen de monitoreo familiar">
-                        <img src="assets/screen.png" >
+                        <img src="assets/screen.png" alt="Interfaz de monitoreo familiar de VitaLink" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -251,7 +251,7 @@
             </div>
         </section>
 
-        <!--Paso 3-->
+
 
         <section id="alertas" class="alert-protocol-section">
             <div class="max-width-container grid-2-col items-center">
@@ -331,7 +331,7 @@
                             </li>
                             <li><span class="material-symbols-outlined">check</span> Soporte técnico estándar</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-outline w-100">Comenzar con Clínica Básica</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline w-100">Comenzar con Clínica Básica</a>
                     </div>
 
                     <div class="price-card featured">
@@ -350,9 +350,9 @@
                                 PDF</li>
                             <li><span class="material-symbols-outlined">check</span> Soporte 24/7 prioritario</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-primary w-100">Lograr la escala</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary w-100">Lograr la escala</a>
                     </div>
-<!--Paso 4-->
+
                     <div class="price-card">
                         <div class="card-badge">Institucional</div>
                         <h3>Institucional</h3>
@@ -370,7 +370,7 @@
                             <li><span class="material-symbols-outlined">check</span> Gestor de cuenta dedicado y SLA de
                                 99.99%</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-outline w-100">Contactar a consultor técnico</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline w-100">Contactar a consultor técnico</a>
                     </div>
                 </div>
 
@@ -394,7 +394,7 @@
                                 grandes</li>
                             <li><span class="material-symbols-outlined">check</span> Botón de emergencia SOS básico</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-outline w-100">Comenzar Gratis</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline w-100">Comenzar Gratis</a>
                     </div>
 
                     <div class="price-card featured">
@@ -417,7 +417,7 @@
                             <li><span class="material-symbols-outlined">check</span> Contactos autorizados y
                                 notificaciones por rol</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-primary w-100">Elegir Plan Familiar</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary w-100">Elegir Plan Familiar</a>
                     </div>
 
                     <div class="price-card">
@@ -439,7 +439,7 @@
                                 alerta</li>
                             <li><span class="material-symbols-outlined">check</span> Soporte técnico prioritario</li>
                         </ul>
-                        <a href="#unirse" class="btn btn-outline w-100">Elegir Plan Plus</a>
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline w-100">Elegir Plan Plus</a>
                     </div>
                 </div>
             </div>
@@ -450,7 +450,7 @@
                     <h2>La tranquilidad de miles de familias</h2>
                     <p>Historias de quienes ya confían el cuidado de sus padres a VitaLink.</p>
                 </div>
-<!--Parte5-->
+
                 <div class="testimonials-grid">
                     <article class="testimonial-card">
                         <p>"Ahora puedo trabajar tranquila sabiendo que si algo pasa, recibiré una alerta inmediata. Es un cambio de vida."</p>
@@ -520,22 +520,22 @@
 
                     <h2 id="cta-title">Dale a tus pacientes continuidad clínica <span class="highlight-text">sin fricción.</span></h2>
                     <p id="cta-desc">Implementación guiada de monitoreo preventivo continuo, alertas oportunas en tiempo real y coordinación médica centralizada desde una sola plataforma.</p>
-                    
+
                     <div class="cta-actions-group">
-                        <a href="#planes" class="btn btn-primary btn-lg" id="cta-action-btn">
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-primary btn-lg" id="cta-action-btn">
                             <span class="material-symbols-outlined">stethoscope</span>
                             Unirme como proveedor de salud
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </a>
-                        <a href="#ventajas-clinicas" class="btn btn-outline btn-lg" id="cta-secondary-btn">
+                        <a href="https://vitalink-frontend.vercel.app/" class="btn btn-outline btn-lg" id="cta-secondary-btn">
                             Solicitar información técnica
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-<!--parte6-->
-        <!-- SECCIÓN EQUIPO DE DESARROLLO -->
+
+
         <section id="equipo-desarrollo" class="team-section">
             <div class="max-width-container">
                 <div class="section-header text-center">
@@ -584,6 +584,12 @@
                 </div>
             </div>
         </section>
+        <section class="project-notices max-width-container" aria-label="Información del proyecto">
+            <details id="privacidad"><summary>Privacidad</summary><p>Esta landing no solicita datos de salud. La demostración usa datos ficticios. Los enlaces externos tienen sus propias políticas de privacidad.</p></details>
+            <details id="terminos"><summary>Términos del prototipo</summary><p>VitaLink es un proyecto académico. Los planes y funcionalidades describen la propuesta de negocio; no constituyen una oferta de servicio médico ni una suscripción disponible.</p></details>
+            <details id="legal"><summary>Aviso del proyecto</summary><p>Desarrollado por CodeBrokers. La demostración no sustituye la evaluación de un profesional de salud.</p></details>
+            <details id="hipaa"><summary>Seguridad propuesta</summary><p>Los controles de seguridad descritos son objetivos del diseño. Este prototipo no acredita certificaciones ni cumplimiento HIPAA o GDPR.</p></details>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -608,26 +614,14 @@
             <div class="footer-links-col">
                 <h4>Legal & Privacidad</h4>
                 <div class="footer-links">
-                    <a href="#privacidad" id="privacidad">Privacidad</a>
-                    <a href="#terminos" id="terminos">Términos de Servicio</a>
-                    <a href="#legal" id="legal">Aviso Legal</a>
+                    <a href="#privacidad">Privacidad</a>
+                    <a href="#terminos">Términos de Servicio</a>
+                    <a href="#legal">Aviso Legal</a>
                     <a href="#hipaa">Cumplimiento HIPAA</a>
                 </div>
             </div>
 
-            <div class="footer-links-col">
-                <h4>Contacto</h4>
-                <div class="footer-contact" id="contacto">
-                    <p><span class="material-symbols-outlined">mail</span> contacto@vitalink.com</p>
-                    <p><span class="material-symbols-outlined">phone</span> +34 900 000 000</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Compartir en redes"><span
-                                class="material-symbols-outlined">share</span></a>
-                        <a href="#" aria-label="Sitio Global"><span class="material-symbols-outlined">public</span></a>
-                        <a href="#" aria-label="Red de Partners"><span class="material-symbols-outlined">hub</span></a>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
         <div class="footer-bottom max-width-container text-center">

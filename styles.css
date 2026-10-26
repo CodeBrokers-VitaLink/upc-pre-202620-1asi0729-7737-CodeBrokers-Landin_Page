@@ -4,7 +4,7 @@
     --primary-dark: #00513a;
     --primary-light: #68dbae;
     --primary-bg: #e6f6f0;
-    
+
     --secondary: #145da3;
     --secondary-dark: #003a70;
     --secondary-bg: #eef5fc;
@@ -177,7 +177,7 @@ img {
     font-size: 18px;
 }
 
-/* --- Dynamic View Visibility System --- */
+
 .view-content,
 .pricing-grid,
 .preview-card-wrapper {
@@ -418,7 +418,7 @@ body[data-audience="pacientes"] .badge-view {
 }
 
 .hero-section {
-    padding: 120px 0 45px; /* Separación balanceada con el Navbar fijo */
+    padding: 120px 0 45px;
     position: relative;
     background: radial-gradient(circle at top right, rgba(104, 219, 174, 0.08), transparent 50%);
 }
@@ -1119,7 +1119,7 @@ body[data-audience="pacientes"] .badge-view {
     z-index: 1;
     box-shadow: var(--shadow-lg);
 }
-<!--Paso4-->
+
 .phone-status {
     background: var(--primary-bg);
     border-radius: 22px;
@@ -1437,7 +1437,7 @@ body[data-audience="pacientes"] .badge-view {
 .cta-section {
     padding: 100px 0;
 }
-<!--Paso5-->
+
 .cta-box {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     border-radius: var(--radius-lg);
@@ -1628,7 +1628,7 @@ body[data-audience="pacientes"] .badge-view {
     width: auto;
     object-fit: contain;
 }
-<!--Paso6-->
+
 .footer-logo .brand-logo-img {
     height: 40px;
 }
@@ -1776,11 +1776,9 @@ body[data-audience="pacientes"] .badge-view {
     margin: 0 auto 36px;
 }
 
-/* ==========================================================================
-   SISTEMA DE DISEÑO RESPONSIVO MULTIDISPOSITIVO (MEDIA QUERIES)
-   ========================================================================== */
 
-/* Laptop / Tablets en Horizontal (≤ 1024px) */
+
+
 @media (max-width: 1024px) {
     .max-width-container {
         padding: 0 20px;
@@ -1816,7 +1814,7 @@ body[data-audience="pacientes"] .badge-view {
     }
 }
 
-/* Tablets en Vertical y Smartphones Medios (≤ 850px) */
+
 @media (max-width: 850px) {
     .mobile-menu-toggle {
         display: inline-flex;
@@ -1912,7 +1910,7 @@ body[data-audience="pacientes"] .badge-view {
     }
 }
 
-/* Dispositivos Móviles (≤ 640px) */
+
 @media (max-width: 640px) {
     .navbar-container {
         padding: 10px 14px;
@@ -2108,7 +2106,7 @@ body[data-audience="pacientes"] .badge-view {
     }
 }
 
-/* Pantallas Extra Pequeñas (≤ 380px) */
+
 @media (max-width: 380px) {
     .hero-content h1 {
         font-size: 1.55rem;
@@ -2128,9 +2126,7 @@ body[data-audience="pacientes"] .badge-view {
     }
 }
 
-/* ==========================================================================
-   SECCIÓN EQUIPO DE DESARROLLO
-   ========================================================================== */
+
 .team-section {
     padding: 72px 0;
     background-color: var(--bg-surface);
@@ -2215,4 +2211,50 @@ body[data-audience="pacientes"] .badge-view {
     color: var(--text-muted);
     letter-spacing: 0.04em;
     text-transform: uppercase;
+}
+
+body { overflow-x: visible; }
+main, section, .hero-content, .hero-visual, .grid-2-col > *, .footer-grid > *, .price-card { min-width: 0; }
+p, h1, h2, h3, h4, .btn, .team-name { overflow-wrap: anywhere; }
+section[id], details[id], #contacto { scroll-margin-top: 160px; }
+:focus-visible { outline: 3px solid var(--secondary); outline-offset: 4px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 3000; padding: 12px; background: white; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.btn, button, summary { min-height: 44px; }
+.btn { white-space: normal; text-align: center; }
+.family-image-placeholder img, .alert-custom-img, .hero-custom-img { max-width: 100%; height: auto; object-fit: contain; }
+.project-notices { padding-top: 24px; padding-bottom: 48px; }
+.project-notices details { padding: 16px; border-bottom: 1px solid var(--border-color); }
+.project-notices summary { cursor: pointer; font-weight: 600; }
+.project-notices p { margin-top: 12px; }
+.footer-contact .btn { margin: 12px 0; }
+@media (max-width: 1200px) and (min-width: 851px) {
+    .navbar-container { flex-wrap: wrap; gap: 12px; }
+    .nav-links { order: 5; width: 100%; justify-content: center; gap: 24px; }
+    .hero-section { padding-top: 180px; }
+}
+@media (max-width: 850px) {
+    .navbar-container { flex-wrap: wrap; }
+    .audience-selector { order: 5; }
+    .nav-links { max-height: 65vh; overflow-y: auto; }
+}
+@media (max-width: 640px) {
+    .navbar-container { gap: 8px; }
+    .mobile-menu-toggle { order: 2; margin-left: auto; }
+    .language-switcher { order: 3; }
+    .language-switcher .lang-icon { display: none; }
+    .language-btn { min-width: 36px; padding: 0 6px; }
+    .audience-selector { flex-basis: 100%; }
+    .hero-section { padding-top: 180px; }
+    .hero-metrics { flex-wrap: wrap; gap: 16px; }
+    .metric-divider { display: none; }
+    .hero-container, .grid-2-col { grid-template-columns: minmax(0, 1fr); }
+    .team-grid { gap: 20px; }
+    .team-card { flex: 0 1 calc(50% - 10px); min-width: 0; }
+    .team-avatar-placeholder { width: 100px; height: 100px; }
+    .team-section .section-header h2 { font-size: 1.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
 }
