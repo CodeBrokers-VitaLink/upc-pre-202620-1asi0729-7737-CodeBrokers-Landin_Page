@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setHTML('.view-pacientes .btn-primary', text.heroFamily[2]);
         setText('.view-pacientes .btn-outline', text.heroFamily[3]);
         document.querySelectorAll('a.btn').forEach(link => {
-            link.setAttribute('href', 'https://vitalink-frontend.vercel.app/');
+            link.setAttribute('href', 'https://vitalink-frontend-963x.onrender.com/');
         });
         setAllText('.metric-label', text.metrics);
 
